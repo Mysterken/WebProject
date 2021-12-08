@@ -109,3 +109,8 @@ fabric.properties
 
 vendor/
 database/
+/.idea/.gitignore
+/.idea/discord.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/WebProject.iml
