@@ -7,13 +7,15 @@ use Exception;
 
 class Posts extends BaseEntity
 {
-    protected string $db_table = 'posts';
-    protected string $prefix = 'PO';
+    const db_table = 'posts';
+    const prefix = 'PO';
 
     private string $title;
     private int $author_id;
     private string $content;
     private DateTime $publish_date;
+
+    private Users $author;
 
     /**
      * @param $id
@@ -22,6 +24,10 @@ class Posts extends BaseEntity
     public function __construct($id=null)
     {
         parent::__construct($id);
+
+        if ($this->getAuthorId()) {
+            $this->setAuthor();
+        }
     }
 
     /**
@@ -61,6 +67,24 @@ class Posts extends BaseEntity
     }
 
     /**
+     * @return $this
+     * @throws Exception
+     */
+    public function setAuthor(): Posts
+    {
+        $this->author = new Users($this->getId());
+        return $this;
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function getAuthor(): Users
+    {
+        return $this->author;
+    }
+
+    /**
      * @return string
      */
     public function getContent(): string
@@ -89,10 +113,11 @@ class Posts extends BaseEntity
     /**
      * @param mixed $publish_date
      * @return Posts
+     * @throws Exception
      */
     public function setPublishDate($publish_date): Posts
     {
-        $this->publish_date = $publish_date;
+        $this->publish_date = new DateTime($publish_date);
         return $this;
     }
 

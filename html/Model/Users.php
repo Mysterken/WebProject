@@ -2,27 +2,16 @@
 
 namespace Html\Model;
 
-use Exception;
-
 class Users extends BaseEntity
 {
-    protected string $db_table = 'users';
-    protected string $prefix = 'U';
+    const db_table = 'users';
+    const prefix = 'U';
 
     private string $first_name;
     private string $last_name;
     private string $email;
     private string $password;
     private int $is_admin;
-
-    /**
-     * @param int|null $id
-     * @throws Exception
-     */
-    public function __construct($id=null)
-    {
-        parent::__construct($id);
-    }
 
     /**
      * @return string

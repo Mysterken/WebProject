@@ -14,7 +14,7 @@ abstract class BaseController
      * @param string $action
      * @param array $params
      */
-    protected function __construct(string $action, array $params = [])
+    public function __construct(string $action, array $params = [])
     {
         $this->params = $params;
 
@@ -32,7 +32,7 @@ abstract class BaseController
      * @return mixed
      */
     public function render(string $title, array $vars, string $view) {
-        $view = $this->viewsDir . $view;
+        $view = $this->viewsDir . $view . '.php';
         ob_start();
         require $view;
         $content = ob_get_clean();

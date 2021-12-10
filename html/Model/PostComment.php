@@ -6,8 +6,8 @@ use Exception;
 
 class PostComment extends BaseEntity
 {
-    protected string $db_table = 'post_comment';
-    protected string $prefix = 'POC';
+    const db_table = 'post_comment';
+    const prefix = 'POC';
 
     private $author_id;
     private $comment;
