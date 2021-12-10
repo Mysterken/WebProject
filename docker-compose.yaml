@@ -8,8 +8,8 @@ services:
         ports:
             - "5555:80"
         volumes:
-            - ./app:/var/www/html
-            - ./vendor:/var/vendor
+            - ./html:/var/www/html
+            - ./vendor:/var/www/vendor
 
     db:
         image: mariadb

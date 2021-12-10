@@ -1,22 +1,23 @@
 <?php
 
-namespace Entity;
+namespace Html\Model;
 
-use Model\BaseEntity;
+use Exception;
 
 class Users extends BaseEntity
 {
     protected string $db_table = 'users';
     protected string $prefix = 'U';
 
-    protected string $first_name;
-    protected string $last_name;
-    protected string $email;
-    protected string $password;
-    protected int $is_admin;
+    private string $first_name;
+    private string $last_name;
+    private string $email;
+    private string $password;
+    private int $is_admin;
 
     /**
      * @param int|null $id
+     * @throws Exception
      */
     public function __construct($id=null)
     {
@@ -112,7 +113,4 @@ class Users extends BaseEntity
         $this->is_admin = $is_admin;
         return $this;
     }
-
-
-
 }

@@ -5,16 +5,17 @@
   "license": "proprietary",
   "authors": [
     {
-      "name": "mysterken",
-      "email": "email@example.com"
+      "name": "Mysterken",
+      "email": "SendNudes@mail.com"
     }
   ],
   "autoload": {
     "psr-4": {
-      "App\\": "app/"
+      "Html\\": "html/"
     }
   },
   "require": {
-    "ext-pdo": "*"
+    "ext-pdo": "*",
+    "ext-http": "*"
   }
 }

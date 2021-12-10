@@ -115,3 +115,4 @@ database/
 /.idea/vcs.xml
 /.idea/WebProject.iml
 /.idea/php.xml
+/.idea/sqldialects.xml

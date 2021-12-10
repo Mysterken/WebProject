@@ -1,9 +1,9 @@
 <?php
 
 require_once './config/config.php';
-require_once '../../vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
-$request = $_SERVER['REQUEST_URI'];
+$request = str_replace('?'.$_SERVER['QUERY_STRING'], '', $_SERVER['REQUEST_URI']) ;
 
 switch ($request) {
     case '':
